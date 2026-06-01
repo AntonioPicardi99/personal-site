@@ -501,13 +501,14 @@
             </p>
           </div>
 
-          <div class="contact-card fade-in">
+          <div class="contact-card fade-in" id="contactCard">
           <form
             name="contact"
             method="POST"
             action="/"
             data-netlify="true"
             class="contact-form"
+            id="contactForm"
             netlify-honeypot="bot-field"
           >
             <input type="hidden" name="form-name" value="contact" />
@@ -555,6 +556,14 @@
               Invia messaggio
             </button>
           </form>
+
+          <!-- Messaggio di successo (nascosto di default) -->
+          <div class="contact-success d-none" id="contactSuccess">
+            <div class="contact-success-icon">✓</div>
+            <h3 class="contact-success-title">Messaggio inviato!</h3>
+            <p class="contact-success-text">Grazie per avermi scritto. Ti risponderò a breve.</p>
+          </div>
+
           </div>
 
           <div class="contact-alt text-center mt-5 fade-in">

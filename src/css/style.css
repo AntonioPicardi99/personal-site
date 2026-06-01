@@ -796,6 +796,41 @@ a:hover { color: var(--accent-hover); }
 
 textarea.custom-input { resize: vertical; min-height: 140px; }
 
+.contact-success {
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-success-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(134, 239, 172, 0.15);
+  border: 1px solid rgba(134, 239, 172, 0.3);
+  color: #86efac;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-success-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.contact-success-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
 .contact-email {
   font-family: var(--font-title);
   font-size: 1rem;
