@@ -25,12 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
       e.preventDefault()
       const data = new FormData(form)
+      const encoded = new URLSearchParams(data).toString()
       try {
-        await fetch('/', { method: 'POST', body: data })
-        form.classList.add('d-none')
-        success.classList.remove('d-none')
+        const res = await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: encoded,
+        })
+        if (res.ok) {
+          form.classList.add('d-none')
+          success.classList.remove('d-none')
+        } else {
+          form.submit()
+        }
       } catch {
-        // fallback: invio tradizionale
         form.submit()
       }
     })
