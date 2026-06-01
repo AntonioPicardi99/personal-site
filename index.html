@@ -340,6 +340,41 @@
         <p class="section-subtitle mt-3">Per sviluppatori e chi cerca una collaborazione tecnica.</p>
       </div>
 
+      <!-- Mobile: capability cards (opzione C) -->
+      <div class="d-lg-none fade-in">
+        <div class="capability-card mb-3">
+          <div class="capability-title">Sviluppo backend robusto</div>
+          <div class="capability-desc">Logiche di business, database, API e integrazioni con sistemi esterni.</div>
+          <div class="capability-pills">
+            <span class="capability-pill">PHP</span>
+            <span class="capability-pill">Symfony</span>
+            <span class="capability-pill">MySQL</span>
+            <span class="capability-pill">REST API</span>
+          </div>
+        </div>
+        <div class="capability-card mb-3">
+          <div class="capability-title">Interfacce web responsive</div>
+          <div class="capability-desc">Layout moderni, leggibili e usabili su qualsiasi dispositivo.</div>
+          <div class="capability-pills">
+            <span class="capability-pill">JavaScript</span>
+            <span class="capability-pill">HTML & CSS</span>
+            <span class="capability-pill">Bootstrap</span>
+          </div>
+        </div>
+        <div class="capability-card">
+          <div class="capability-title">Ambienti professionali</div>
+          <div class="capability-desc">Sviluppo isolato, versionamento e collaborazione su progetti condivisi.</div>
+          <div class="capability-pills">
+            <span class="capability-pill">Docker</span>
+            <span class="capability-pill">Git</span>
+            <span class="capability-pill">Postman</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desktop: tech cards con descrizione -->
+      <div class="d-none d-lg-block">
+
       <div class="stack-group fade-in">
         <p class="stack-category-label">Backend</p>
         <div class="row g-3">
@@ -448,6 +483,8 @@
         </div>
       </div>
 
+      </div><!-- end d-none d-lg-block -->
+
     </div>
   </section>
 
@@ -468,6 +505,7 @@
           <form
             name="contact"
             method="POST"
+            action="/"
             data-netlify="true"
             class="contact-form"
             netlify-honeypot="bot-field"
