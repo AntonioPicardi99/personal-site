@@ -765,9 +765,6 @@ textarea.custom-input { resize: vertical; min-height: 140px; }
 
   .hero-title { font-size: 2.4rem; }
 
-  /* HIGH — CTA full width su mobile */
-  .btn-primary-custom { width: 100%; justify-content: center; }
-
   /* HIGH — Hero padding top ridotto */
   .hero-section { padding-top: 96px; }
 }
