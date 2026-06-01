@@ -589,6 +589,41 @@ a:hover { color: var(--accent-hover); }
   .tech-card-note { display: none; }
 }
 
+/* ===== MOBILE SERVICE LIST (hero) ===== */
+.mobile-service-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.msrv-row {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.msrv-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.msrv-purple { background: rgba(99,102,241,.15); color: #818cf8; }
+.msrv-teal   { background: rgba(20,184,166,.12); color: #5eead4; }
+.msrv-amber  { background: rgba(245,158,11,.12); color: #fbbf24; }
+
+.msrv-text { flex: 1; }
+.msrv-title { font-size: .88rem; font-weight: 600; color: var(--text-primary); }
+.msrv-sub   { font-size: .72rem; color: var(--text-muted); margin-top: 2px; }
+
 /* ===== PROJECT CARDS ===== */
 .project-card {
   background: var(--bg-card);
