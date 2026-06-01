@@ -713,6 +713,17 @@ a:hover { color: var(--accent-hover); }
 }
 
 /* ===== CONTACT FORM ===== */
+.contact-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+@media (max-width: 480px) {
+  .contact-card { padding: 20px 16px; }
+}
+
 .contact-form { width: 100%; }
 
 .form-label {
