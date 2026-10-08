@@ -16,10 +16,10 @@ Form Netlify: `public/_forms.html` (copia statica per il rilevamento del form, i
 - Form: Netlify Forms (attributo `netlify` su `<form>`)
 
 ## Struttura sezioni (in ordine nel DOM)
-1. `#mainNav` — navbar fixed-top (voci: Servizi, Progetti, Chi sono, Tecnologie, Contatti; il nome porta a `#hero`)
+1. `#mainNav` — navbar fixed-top (voci: Cosa sviluppo, Progetti, Chi sono, Tecnologie, Contatti; il nome porta a `#hero`)
 2. `#hero` — titolo con cursore lampeggiante, sottotitolo, CTA; mockup gestionale (tabella ordini con corriere e stato + magazzino, dati fittizi, `aria-hidden`) su tutti i breakpoint: sotto 576px senza colonna Corriere e senza blocco `.mockup-stock`. Altezza data dal padding, senza min-height: la sezione successiva si vede già nella prima schermata
 3. `#projects` — "Cosa sviluppo": 3 servizi (siti web, CRM/gestionali, e-commerce); su desktop elenco a righe in un unico pannello, su mobile card impilate con icona e titolo sulla stessa riga
-4. `#work` — "Alcuni progetti": 3 casi studio anonimi (clienti e magazzino, e-commerce su misura e PrestaShop con moduli custom, gestione personale) in schede Prima / Cosa ho costruito / Risultato, rese come sequenza con pallini grigio → blu → verde. Su mobile la `.row.case-list` diventa un carosello orizzontale con scroll-snap (scheda successiva visibile al bordo). Progetti sviluppati da dipendente: niente nomi di clienti, link o numeri inventati, formula "a cui ho lavorato"
+4. `#work` — "Alcuni progetti": 3 casi studio anonimi (clienti e magazzino, e-commerce su misura e PrestaShop con moduli custom, gestione personale) in schede Prima / Cosa ho sviluppato / Risultato, rese come sequenza con pallini grigio → blu → verde. Su mobile la `.row.case-list` diventa un carosello orizzontale con scroll-snap (scheda successiva visibile al bordo). Progetti sviluppati da dipendente: niente nomi di clienti, link o numeri inventati, formula "a cui ho lavorato, da solo o in team"
 5. `#about` — "Chi sono": titolo a sinistra, testo + link social a destra (nessun riferimento al datore di lavoro)
 6. `#skills` — "Tecnologie": gruppi Backend / Frontend / Strumenti; desktop righe con etichetta a sinistra, mobile capability card
 7. `#contact` — "Parliamo": intro + email a sinistra, form Netlify a destra (su mobile email prima del form)
@@ -44,6 +44,7 @@ Sfondi alternati: hero bianco, `#projects` `.section-alt`, `#work` bianco, `#abo
 
 ## Regole invarianti (NON modificare mai)
 - I testi sono stati rivisti (ottobre 2026): non cambiarli senza una richiesta esplicita
+- Tono da portfolio, non da freelance (Antonio è dipendente, senza partita IVA): niente "la tua azienda", "se hai un progetto", "clienti" riferiti a sé, offerte di servizi o "opportunità di lavoro"
 - Il form deve mantenere: `name="contact"`, `method="POST"`, `netlify`, `data-netlify="true"`, `netlify-honeypot="bot-field"`, campo hidden `form-name`
 - L'ID `#contactForm` e `#contactSuccess` devono restare invariati (usati in `main.js`)
 - L'ID `#footer-year` deve restare invariato (popolato da `main.js`)
