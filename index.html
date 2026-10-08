@@ -4,18 +4,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Antonio Picardi — Sviluppatore web. Siti web, CRM e software su misura." />
-  <title>Antonio Picardi — Sviluppatore Web</title>
+  <title>Antonio Picardi — Sviluppatore web</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:title" content="Antonio Picardi — Sviluppatore web" />
+  <meta property="og:description" content="Antonio Picardi — Sviluppatore web. Siti web, CRM e software su misura." />
+  <meta property="og:url" content="https://antonio-picardi.netlify.app/" />
+  <meta property="og:image" content="https://antonio-picardi.netlify.app/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Antonio Picardi — Siti web e software su misura" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://antonio-picardi.netlify.app/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <noscript>
+    <style>.fade-in { opacity: 1; transform: none; }</style>
+  </noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- ========== NAVBAR ========== -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+  <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
     <div class="container">
-      <a class="navbar-brand fw-semibold" href="#hero">Antonio Picardi</a>
+      <a class="navbar-brand" href="#hero">Antonio Picardi</a>
 
       <button
         class="navbar-toggler border-0"
@@ -31,8 +45,8 @@
 
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav gap-1">
-          <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Progetti</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Servizi</a></li>
+          <li class="nav-item"><a class="nav-link" href="#work">Progetti</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">Chi sono</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Tecnologie</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contatti</a></li>
@@ -49,14 +63,12 @@
         <!-- Testo -->
         <div class="col-lg-6 fade-in hero-text-col">
           <h1 class="hero-title mb-4">
-            Siti web e software su misura.
-          </h1>
+            Siti web e software su misura.</h1>
           <p class="hero-subtitle mb-5">
-            <strong>Siti web</strong> e <strong>software su misura</strong> per aziende e
-            professionisti — veloci, semplici da usare, pensati per le tue esigenze.
+            Sono Antonio, sviluppatore full stack. Aiuto aziende e professionisti con strumenti veloci,
+            semplici da usare e costruiti attorno a come lavorano davvero.
           </p>
-          <!-- CTA desktop only -->
-          <a href="#contact" class="btn btn-primary-custom btn-lg d-none d-lg-inline-flex">
+          <a href="#contact" class="btn btn-primary-custom btn-lg">
             Contattami
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ms-2" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
@@ -64,102 +76,45 @@
           </a>
         </div>
 
-        <!-- Visual mobile -->
-        <div class="col-lg-6 fade-in d-lg-none">
-          <div class="mobile-service-list">
-            <div class="msrv-row">
-              <div class="msrv-icon msrv-purple">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 6.032 4H2.083a6.04 6.04 0 0 1 1.046-1.54L7.5 1.077zM2.083 5a6.04 6.04 0 0 0-.175 1h2.498a12.39 12.39 0 0 1 .044-1H2.083zm0 2h2.367a12.4 12.4 0 0 1 0 1H2.083a6.04 6.04 0 0 1 0-1zm.175 2H2.25a6.04 6.04 0 0 0 .175 1H4.59a12.39 12.39 0 0 1-.044-1H2.258zm.63 2H2.25a6.04 6.04 0 0 0 1.046 1.54L7.5 14.923C6.83 14.72 6.165 14.103 5.613 13.078A7.97 7.97 0 0 1 4.924 12H2.888zm2.22-10H8.5V1.077a6.04 6.04 0 0 0-.587.154C7.333 1.56 6.669 2.177 6.117 3.2A7.97 7.97 0 0 0 5.108 4zm.416 1a11.39 11.39 0 0 0-.065 1H8.5V5H5.524zm-.065 2H8.5V6H5.524a11.39 11.39 0 0 0 .065 1zm.065 1H8.5v1H5.589a11.39 11.39 0 0 0 .065-1zm-.416 2H8.5v1H6.117c.218-.406.413-.842.576-1zm.576 2H8.5v1.077a6.04 6.04 0 0 1-.587-.154C7.333 14.44 6.669 13.823 6.117 12.8a7.97 7.97 0 0 1-.408-.8zM9.5 1.077V4h2.416A7.97 7.97 0 0 0 10.89 3.2C10.338 2.177 9.673 1.56 9 1.231a6.04 6.04 0 0 1 .5-.154zm0 3.923V6h2.976a11.39 11.39 0 0 0-.065-1H9.5zm0 2v1h2.911a11.39 11.39 0 0 0 0-1H9.5zm0 2v1h2.976a11.39 11.39 0 0 0 .065-1H9.5z"/>
-                </svg>
-              </div>
-              <div class="msrv-text">
-                <div class="msrv-title">Siti web professionali</div>
-                <div class="msrv-sub">Vetrina, landing page, aree riservate</div>
-              </div>
-            </div>
-            <div class="msrv-row">
-              <div class="msrv-icon msrv-teal">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                </svg>
-              </div>
-              <div class="msrv-text">
-                <div class="msrv-title">Software gestionale</div>
-                <div class="msrv-sub">CRM, magazzino, personale, ordini</div>
-              </div>
-            </div>
-            <div class="msrv-row">
-              <div class="msrv-icon msrv-amber">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                </svg>
-              </div>
-              <div class="msrv-text">
-                <div class="msrv-title">E-commerce</div>
-                <div class="msrv-sub">Negozi online su misura e Prestashop</div>
-              </div>
-            </div>
-          </div>
-          <div class="text-center mt-4">
-            <a href="#contact" class="btn btn-primary-custom">
-              Contattami
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ms-2" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
         <!-- Mockup desktop -->
         <div class="col-lg-6 fade-in d-none d-lg-block">
-          <div class="hero-mockup">
+          <div class="hero-mockup" aria-hidden="true">
             <div class="mockup-bar">
-              <span class="mockup-dot dot-r"></span>
-              <span class="mockup-dot dot-y"></span>
-              <span class="mockup-dot dot-g"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
+              <span class="mockup-dot"></span>
               <span class="mockup-filename">Il tuo pannello di controllo</span>
             </div>
             <div class="mockup-body">
 
-              <div class="mockup-section-label">Panoramica</div>
-              <div class="mockup-row">
-                <span class="mockup-row-label">Clienti attivi</span>
-                <div class="mockup-bar-track"><div class="mockup-bar-fill" style="width:82%"></div></div>
-                <span class="mockup-row-value">142</span>
+              <div class="mockup-section-head">
+                <span class="mockup-section-label">Ordini</span>
+                <span class="mockup-section-meta">38 aperti</span>
               </div>
-              <div class="mockup-row">
-                <span class="mockup-row-label">Ordini aperti</span>
-                <div class="mockup-bar-track"><div class="mockup-bar-fill" style="width:55%"></div></div>
-                <span class="mockup-row-value">38</span>
-              </div>
-              <div class="mockup-row">
-                <span class="mockup-row-label">Preventivi</span>
-                <div class="mockup-bar-track"><div class="mockup-bar-fill" style="width:40%"></div></div>
-                <span class="mockup-row-value">12</span>
-              </div>
+              <table class="mockup-table">
+                <thead>
+                  <tr><th>N.</th><th>Cliente</th><th>Corriere</th><th>Stato</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>1042</td><td>Ferramenta Rossi</td><td>BRT</td><td><span class="mockup-badge green">Spedito</span></td></tr>
+                  <tr><td>1041</td><td>Bianchi Srl</td><td>GLS</td><td><span class="mockup-badge blue">In preparazione</span></td></tr>
+                  <tr><td>1040</td><td>Edilverde</td><td>SDA</td><td><span class="mockup-badge amber">Da evadere</span></td></tr>
+                  <tr><td>1039</td><td>Studio Neri</td><td>BRT</td><td><span class="mockup-badge green">Spedito</span></td></tr>
+                </tbody>
+              </table>
 
               <div class="mockup-divider"></div>
 
-              <div class="mockup-section-label d-none d-lg-block">Magazzino</div>
-              <div class="mockup-row d-none d-lg-flex">
+              <div class="mockup-section-label">Magazzino</div>
+              <div class="mockup-row">
                 <span class="mockup-row-label">Giacenze</span>
                 <div class="mockup-bar-track"><div class="mockup-bar-fill green" style="width:70%"></div></div>
                 <span class="mockup-badge green">Regolare</span>
               </div>
-              <div class="mockup-row d-none d-lg-flex">
+              <div class="mockup-row">
                 <span class="mockup-row-label">In esaurimento</span>
                 <div class="mockup-bar-track"><div class="mockup-bar-fill amber" style="width:20%"></div></div>
                 <span class="mockup-badge amber">3 articoli</span>
-              </div>
-
-              <div class="mockup-divider d-none d-lg-block"></div>
-
-              <div class="mockup-pill-row">
-                <span class="mockup-pill">Sito web</span>
-                <span class="mockup-pill">E-commerce</span>
-                <span class="mockup-pill">CRM</span>
-                <span class="mockup-pill">Gestionale</span>
               </div>
 
             </div>
@@ -168,35 +123,30 @@
 
       </div>
     </div>
-    <div class="hero-grid-overlay" aria-hidden="true"></div>
   </section>
 
   <!-- ========== PROGETTI ========== -->
   <section id="projects" class="section-padding section-alt">
     <div class="container">
-      <div class="section-header text-center mb-5 fade-in">
-        <span class="section-tag">Work</span>
-        <h2 class="section-title mt-2">La mia esperienza</h2>
-        <p class="section-subtitle mt-3">Le tipologie di progetti su cui lavoro.</p>
+      <div class="section-header section-header-split fade-in">
+        <h2 class="section-title">Cosa sviluppo</h2>
+        <p class="section-subtitle mt-3">I progetti su cui lavoro più spesso.</p>
       </div>
 
-      <div class="row g-4 justify-content-center">
+      <div class="row g-0 project-list">
 
         <!-- Card 1: Siti web -->
-        <div class="col-md-6 col-lg-4 fade-in">
+        <div class="col-12 fade-in">
           <div class="project-card h-100">
             <div class="project-card-header">
               <div class="project-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 6.032 4H2.083a6.04 6.04 0 0 1 1.046-1.54L7.5 1.077zM2.083 5a6.04 6.04 0 0 0-.175 1h2.498a12.39 12.39 0 0 1 .044-1H2.083zm0 2h2.367a12.4 12.4 0 0 1 0 1H2.083a6.04 6.04 0 0 1 0-1zm.175 2H2.25a6.04 6.04 0 0 0 .175 1H4.59a12.39 12.39 0 0 1-.044-1H2.258zm.63 2H2.25a6.04 6.04 0 0 0 1.046 1.54L7.5 14.923C6.83 14.72 6.165 14.103 5.613 13.078A7.97 7.97 0 0 1 4.924 12H2.888zm2.22-10H8.5V1.077a6.04 6.04 0 0 0-.587.154C7.333 1.56 6.669 2.177 6.117 3.2A7.97 7.97 0 0 0 5.108 4zm.416 1a11.39 11.39 0 0 0-.065 1H8.5V5H5.524zm-.065 2H8.5V6H5.524a11.39 11.39 0 0 0 .065 1zm.065 1H8.5v1H5.589a11.39 11.39 0 0 0 .065-1zm-.416 2H8.5v1H6.117c.218-.406.413-.842.576-1zm.576 2H8.5v1.077a6.04 6.04 0 0 1-.587-.154C7.333 14.44 6.669 13.823 6.117 12.8a7.97 7.97 0 0 1-.408-.8zM9.5 1.077V4h2.416A7.97 7.97 0 0 0 10.89 3.2C10.338 2.177 9.673 1.56 9 1.231a6.04 6.04 0 0 1 .5-.154zm0 3.923V6h2.976a11.39 11.39 0 0 0-.065-1H9.5zm0 2v1h2.911a11.39 11.39 0 0 0 0-1H9.5zm0 2v1h2.976a11.39 11.39 0 0 0 .065-1H9.5zm0 2v.8c.14.268.286.517.44.748H12.1a7.97 7.97 0 0 0-.184-.748H9.5zm0 1.8v1.246a6.04 6.04 0 0 0 .5-.154c.673-.328 1.338-.944 1.89-1.967A7.97 7.97 0 0 0 12.392 12H9.5zm3.083-8h-2.05a7.97 7.97 0 0 0-.408.8c-.552 1.024-1.217 1.64-1.887 1.844V1.077L13.917 4zm.416 1h-2.432a12.39 12.39 0 0 1 .044 1h2.563a6.04 6.04 0 0 0-.175-1zm-.175 2h-2.388a12.4 12.4 0 0 1 0 1h2.388a6.04 6.04 0 0 0 0-1zm-.63 2h-2.044a12.39 12.39 0 0 1-.044 1h2.388a6.04 6.04 0 0 0-.175-1h-.125zm-.63 2h-1.825a7.97 7.97 0 0 1-.408.8c-.552 1.023-1.217 1.64-1.887 1.844L8.5 14.923l4.917-4.923a6.04 6.04 0 0 0 1.046-1.54z"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9s1.3-6.4 3.8-9z"/></svg>
               </div>
             </div>
             <h3 class="project-title">Siti web professionali</h3>
             <p class="project-desc">
-              Dalla semplice vetrina aziendale al sito multi-pagina con form di contatto,
-              richiesta preventivi online, sezioni prodotti e aree riservate. Responsive,
-              veloci e ottimizzati per essere trovati su Google.
+              Dalla vetrina aziendale al sito con richiesta preventivi, catalogo prodotti e area riservata.
+              Veloci su ogni dispositivo e pensati per farsi trovare su Google.
             </p>
             <div class="project-tags">
               <span class="project-tag">Sito vetrina</span>
@@ -208,55 +158,47 @@
         </div>
 
         <!-- Card 2: CRM & Gestionali -->
-        <div class="col-md-6 col-lg-4 fade-in">
+        <div class="col-12 fade-in">
           <div class="project-card h-100">
             <div class="project-card-header">
               <div class="project-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9.5h18M3 15h18M9 9.5V20"/></svg>
               </div>
             </div>
-            <h3 class="project-title">CRM & Software gestionale su misura</h3>
+            <h3 class="project-title">CRM e gestionali su misura</h3>
             <p class="project-desc">
-              Gestionali personalizzati per esigenze molto diverse:
-              magazzino e giacenze, clienti e preventivi, gestione del personale
-              (presenze, ore di lavoro, schede tecniche, materiali), ordini con
-              integrazione ai vettori di spedizione, reportistica su dati aziendali.
-              Ogni progetto nasce da un confronto diretto con te — nessun
-              template, tutto costruito attorno a come lavori.
+              Gestionali costruiti attorno a come lavora la tua azienda: dal magazzino ai preventivi,
+              dalle presenze del personale agli ordini collegati ai corrieri. Ogni progetto parte
+              da un confronto diretto, senza template.
             </p>
             <div class="project-tags">
-              <span class="project-tag">Magazzino & giacenze</span>
-              <span class="project-tag">Clienti & preventivi</span>
+              <span class="project-tag">Magazzino e giacenze</span>
+              <span class="project-tag">Clienti e preventivi</span>
               <span class="project-tag">Gestione personale</span>
-              <span class="project-tag">Ordini & spedizioni</span>
+              <span class="project-tag">Ordini e spedizioni</span>
               <span class="project-tag">Reportistica</span>
             </div>
           </div>
         </div>
 
         <!-- Card 3: E-commerce -->
-        <div class="col-md-6 col-lg-4 fade-in">
+        <div class="col-12 fade-in">
           <div class="project-card h-100">
             <div class="project-card-header">
               <div class="project-icon">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
-                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2.2l2.3 10.6a1.6 1.6 0 0 0 1.6 1.3h7.7a1.6 1.6 0 0 0 1.6-1.2L20 8H6"/><circle cx="9.5" cy="19.5" r="1.2"/><circle cx="17" cy="19.5" r="1.2"/></svg>
               </div>
             </div>
             <h3 class="project-title">E-commerce</h3>
             <p class="project-desc">
-              Negozi online su misura: catalogo prodotti, carrello, gestione ordini
-              e pagamenti, anche integrati con gestionali esistenti per sincronizzare
-              magazzino e vendite. Sviluppo anche su Prestashop.
+              Negozi online su misura o su PrestaShop, con catalogo, ordini e pagamenti. Se hai già un
+              gestionale, li collego per tenere allineati magazzino e vendite.
             </p>
             <div class="project-tags">
               <span class="project-tag">Sviluppo su misura</span>
               <span class="project-tag">Gestione ordini</span>
               <span class="project-tag">Pagamenti online</span>
-              <span class="project-tag">Prestashop</span>
+              <span class="project-tag">PrestaShop</span>
             </div>
           </div>
         </div>
@@ -265,33 +207,99 @@
     </div>
   </section>
 
-  <!-- ========== CHI SONO ========== -->
-  <section id="about" class="section-padding">
+  <!-- ========== PROGETTI REALIZZATI ========== -->
+  <section id="work" class="section-padding">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="section-header text-center mb-5 fade-in">
-            <span class="section-tag">About</span>
-            <h2 class="section-title mt-2">Chi sono</h2>
-          </div>
+      <div class="section-header section-header-split fade-in">
+        <h2 class="section-title">Alcuni progetti</h2>
+        <p class="section-subtitle mt-3">Software a cui ho lavorato per aziende di settori diversi. Per riservatezza non indico i nomi dei clienti.</p>
+      </div>
 
+      <div class="row g-4">
+        <div class="col-lg-4 fade-in">
+          <article class="case-card h-100">
+            <h3 class="case-title">Gestionale clienti e magazzino</h3>
+            <dl class="case-fields">
+              <dt>Prima</dt>
+              <dd>Clienti, carichi e giacenze segnati su carta e fogli di calcolo, con i conti fatti a mano.</dd>
+              <dt>Cosa ho costruito</dt>
+              <dd>Un gestionale web con anagrafica clienti, movimenti di magazzino e giacenze aggiornate in automatico.</dd>
+              <dt>Risultato</dt>
+              <dd class="case-result">Magazzino digitalizzato, niente più calcoli a mano, dati sempre aggiornati e al sicuro.</dd>
+            </dl>
+            <div class="project-tags">
+                <span class="project-tag">Symfony</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Docker</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-lg-4 fade-in">
+          <article class="case-card h-100">
+            <h3 class="case-title">E-commerce su misura e PrestaShop</h3>
+            <dl class="case-fields">
+              <dt>Prima</dt>
+              <dd>Nessun canale di vendita online, oppure un negozio standard che non si adattava al modo di lavorare dell'azienda.</dd>
+              <dt>Cosa ho costruito</dt>
+              <dd>Negozi sviluppati da zero, con sito vetrina, shop e pannello di gestione degli ordini. Oppure installazioni PrestaShop con moduli su misura per le funzioni che mancavano.</dd>
+              <dt>Risultato</dt>
+              <dd class="case-result">Un negozio online costruito sulle esigenze dell'azienda, non il contrario.</dd>
+            </dl>
+            <div class="project-tags">
+                <span class="project-tag">PHP</span>
+                <span class="project-tag">PrestaShop</span>
+                <span class="project-tag">MySQL</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-lg-4 fade-in">
+          <article class="case-card h-100">
+            <h3 class="case-title">Gestione del personale</h3>
+            <dl class="case-fields">
+              <dt>Prima</dt>
+              <dd>Presenze e ore di lavoro raccolte su fogli di carta e ricontate a fine mese.</dd>
+              <dt>Cosa ho costruito</dt>
+              <dd>Un'applicazione per registrare presenze, ore, schede di lavoro e materiali usati.</dd>
+              <dt>Risultato</dt>
+              <dd class="case-result">Ore calcolate in automatico e report personalizzati sulle richieste del cliente.</dd>
+            </dl>
+            <div class="project-tags">
+                <span class="project-tag">Symfony</span>
+                <span class="project-tag">MySQL</span>
+                <span class="project-tag">Docker</span>
+            </div>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CHI SONO ========== -->
+  <section id="about" class="section-padding section-alt">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-lg-4">
+          <div class="section-header mb-0 fade-in">
+            <h2 class="section-title">Chi sono</h2>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
           <div class="about-card fade-in">
             <p class="about-text">
-              Sono un <strong>full stack developer</strong>: costruisco software
-              che semplifica davvero il lavoro delle persone. Nel corso della mia carriera ho sviluppato
-              siti web, e-commerce e gestionali personalizzati per settori molto diversi — dal commercio
-              alla logistica, dalla fatturazione alla gestione aziendale complessa.
-            </p>
-            <p class="about-text">
-              Mi occupo dell'<strong>intero ciclo di vita dei progetti</strong>: dall'analisi delle esigenze
-              del cliente alla proposta della soluzione, dallo sviluppo alla manutenzione nel tempo.
-              Attualmente lavoro all'interno di un'azienda software, dove seguo clienti dalla prima
-              richiesta fino al rilascio e oltre.
+              Sono uno <strong>sviluppatore full stack</strong> e costruisco software che semplifica il lavoro
+              delle persone. Ho realizzato siti, e-commerce e gestionali per settori molto diversi:
+              commercio, logistica, fatturazione e gestione aziendale. <strong>Seguo i progetti
+              dall'inizio alla fine</strong>: analisi delle esigenze, sviluppo, rilascio e manutenzione
+              nel tempo.
             </p>
             <p class="about-text mb-0">
-              Credo che un buon software si veda nel tempo: nel codice che un collega riesce a leggere,
-              nella funzionalità che si aggiunge senza rompere ciò che già funziona, nell'interfaccia
-              che un utente non tecnico sa usare senza manuale. Se hai un progetto in mente, scrivimi.
+              Per me un buon software si vede nel tempo: codice che un collega sa leggere, funzionalità
+              che si aggiungono senza rompere quelle esistenti, interfacce che si usano senza manuale.
+              Se hai un progetto in mente, scrivimi.
             </p>
 
             <div class="about-meta mt-4 pt-4">
@@ -319,18 +327,17 @@
   </section>
 
   <!-- ========== STACK TECNICO ========== -->
-  <section id="skills" class="section-padding section-alt">
+  <section id="skills" class="section-padding">
     <div class="container">
-      <div class="section-header text-center mb-5 fade-in">
-        <span class="section-tag">Tech</span>
-        <h2 class="section-title mt-2">Tecnologie</h2>
-        <p class="section-subtitle mt-3">Per sviluppatori e chi cerca una collaborazione tecnica.</p>
+      <div class="section-header section-header-split fade-in">
+        <h2 class="section-title">Tecnologie</h2>
+        <p class="section-subtitle mt-3">Per chi cerca una collaborazione tecnica: linguaggi e strumenti che uso ogni giorno.</p>
       </div>
 
       <!-- Mobile: capability cards (opzione C) -->
       <div class="d-lg-none fade-in">
         <div class="capability-card mb-3">
-          <div class="capability-title">Sviluppo backend robusto</div>
+          <div class="capability-title">Sviluppo backend</div>
           <div class="capability-desc">Logiche di business, database, API e integrazioni con sistemi esterni.</div>
           <div class="capability-pills">
             <span class="capability-pill">PHP</span>
@@ -340,8 +347,8 @@
           </div>
         </div>
         <div class="capability-card mb-3">
-          <div class="capability-title">Interfacce web responsive</div>
-          <div class="capability-desc">Layout moderni, leggibili e usabili su qualsiasi dispositivo.</div>
+          <div class="capability-title">Interfacce web</div>
+          <div class="capability-desc">Pagine leggibili e facili da usare su ogni dispositivo.</div>
           <div class="capability-pills">
             <span class="capability-pill">JavaScript</span>
             <span class="capability-pill">HTML & CSS</span>
@@ -349,8 +356,8 @@
           </div>
         </div>
         <div class="capability-card">
-          <div class="capability-title">Ambienti professionali</div>
-          <div class="capability-desc">Sviluppo isolato, versionamento e collaborazione su progetti condivisi.</div>
+          <div class="capability-title">Strumenti di lavoro</div>
+          <div class="capability-desc">Ambienti isolati, versionamento e lavoro in team.</div>
           <div class="capability-pills">
             <span class="capability-pill">Docker</span>
             <span class="capability-pill">Git</span>
@@ -365,40 +372,40 @@
       <div class="stack-group fade-in">
         <p class="stack-category-label">Backend</p>
         <div class="row g-3">
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">PHP</div>
-              <div class="tech-card-note">OOP, Symfony e procedurale. Il mio linguaggio principale da anni.</div>
+              <div class="tech-card-note">Il mio linguaggio principale da anni, a oggetti e procedurale.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">Symfony</div>
-              <div class="tech-card-note">Framework preferito per applicazioni strutturate e scalabili.</div>
+              <div class="tech-card-note">Il framework che preferisco per applicazioni strutturate e scalabili.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">Doctrine</div>
               <div class="tech-card-note">ORM per la gestione del database in progetti Symfony.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">Twig</div>
-              <div class="tech-card-note">Motore di template Symfony per view pulite e riutilizzabili.</div>
+              <div class="tech-card-note">Template Symfony puliti e riutilizzabili.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">MySQL</div>
-              <div class="tech-card-note">Design e gestione di database relazionali anche complessi.</div>
+              <div class="tech-card-note">Progettazione e gestione di database relazionali, anche complessi.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">REST API</div>
-              <div class="tech-card-note">Progettazione e sviluppo di API per integrazioni con terze parti.</div>
+              <div class="tech-card-note">Progettazione di API e integrazioni con servizi esterni.</div>
             </div>
           </div>
         </div>
@@ -407,64 +414,58 @@
       <div class="stack-group fade-in">
         <p class="stack-category-label">Frontend</p>
         <div class="row g-3">
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">JavaScript</div>
-              <div class="tech-card-note">Vanilla JS per interazioni, logiche client-side e fetch API.</div>
+              <div class="tech-card-note">Vanilla JS per interazioni e logiche lato client.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">HTML & CSS</div>
               <div class="tech-card-note">Markup semantico, layout responsive, attenzione all'accessibilità.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">Bootstrap</div>
-              <div class="tech-card-note">Versioni 3, 4 e 5. Su progetti nuovi e su codebase esistenti.</div>
+              <div class="tech-card-note">Versioni 3, 4 e 5, su progetti nuovi ed esistenti.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
-              <div class="tech-card-name">Prestashop</div>
-              <div class="tech-card-note">Personalizzazione di temi e moduli su richiesta del cliente.</div>
+              <div class="tech-card-name">PrestaShop</div>
+              <div class="tech-card-note">Temi e moduli personalizzati.</div>
             </div>
           </div>
         </div>
       </div>
 
       <div class="stack-group fade-in">
-        <p class="stack-category-label">Tools</p>
+        <p class="stack-category-label">Strumenti</p>
         <div class="row g-3">
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">Docker</div>
               <div class="tech-card-note">Ambienti containerizzati per sviluppo isolato e riproducibile.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">Git</div>
               <div class="tech-card-note">Versioning, branch strategy e lavoro su progetti condivisi.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">Postman</div>
-              <div class="tech-card-note">Test e debug di API REST durante lo sviluppo e le integrazioni.</div>
+              <div class="tech-card-note">Test e debug delle API REST.</div>
             </div>
           </div>
-          <div class="col-4 col-6 col-lg-3">
+          <div class="col-6 col-lg-3">
             <div class="tech-card">
               <div class="tech-card-name">Composer</div>
               <div class="tech-card-note">Gestione dipendenze PHP e autoloading nei progetti Symfony.</div>
-            </div>
-          </div>
-          <div class="col-4 col-6 col-lg-3">
-            <div class="tech-card">
-              <div class="tech-card-name">npm</div>
-              <div class="tech-card-note">Gestione pacchetti frontend e build con Vite.</div>
             </div>
           </div>
         </div>
@@ -476,89 +477,90 @@
   </section>
 
   <!-- ========== CONTATTI ========== -->
-  <section id="contact" class="section-padding">
+  <section id="contact" class="section-padding section-alt">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-7">
-          <div class="section-header text-center mb-5 fade-in">
-            <span class="section-tag">Contact</span>
-            <h2 class="section-title mt-2">Parliamoci</h2>
+      <div class="row gx-4 gy-5 gx-lg-5 justify-content-between">
+        <div class="col-lg-5">
+          <div class="section-header mb-0 fade-in">
+            <h2 class="section-title">Parliamo</h2>
             <p class="section-subtitle mt-3">
-              Hai un progetto in mente o vuoi semplicemente farti sentire?
+              Hai un progetto in mente? Raccontamelo, anche solo a grandi linee.
             </p>
           </div>
 
-          <div class="contact-card fade-in" id="contactCard">
-          <form
-            name="contact"
-            method="POST"
-            action="/"
-            netlify
-            data-netlify="true"
-            class="contact-form"
-            id="contactForm"
-            netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="d-none">
-              <label>Non compilare: <input name="bot-field" /></label>
-            </p>
-
-            <div class="mb-4">
-              <label for="name" class="form-label">Nome</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                class="form-control custom-input"
-                placeholder="Il tuo nome"
-                required
-              />
-            </div>
-
-            <div class="mb-4">
-              <label for="email" class="form-label">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                class="form-control custom-input"
-                placeholder="tua@email.com"
-                required
-              />
-            </div>
-
-            <div class="mb-4">
-              <label for="message" class="form-label">Messaggio</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                class="form-control custom-input"
-                placeholder="Descrivimi il tuo progetto o il motivo del contatto..."
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="btn btn-primary-custom w-100 justify-content-center">
-              Invia messaggio
-            </button>
-          </form>
-
-          <!-- Messaggio di successo (nascosto di default) -->
-          <div class="contact-success d-none" id="contactSuccess">
-            <div class="contact-success-icon">✓</div>
-            <h3 class="contact-success-title">Messaggio inviato!</h3>
-            <p class="contact-success-text">Grazie per avermi scritto. Ti risponderò a breve.</p>
-          </div>
-
-          </div>
-
-          <div class="contact-alt text-center mt-5 fade-in">
-            <p class="text-secondary-custom mb-2">Preferisci la mail diretta?</p>
+          <div class="contact-alt mt-5 fade-in">
+            <p class="text-secondary-custom mb-2">Preferisci scrivermi direttamente?</p>
             <a href="mailto:antoniopicardi7@gmail.com" class="contact-email">
               antoniopicardi7@gmail.com
             </a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="contact-card fade-in" id="contactCard">
+            <form
+              name="contact"
+              method="POST"
+              action="/"
+              netlify
+              data-netlify="true"
+              class="contact-form"
+              id="contactForm"
+              netlify-honeypot="bot-field"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p class="d-none">
+                <label>Non compilare: <input name="bot-field" /></label>
+              </p>
+
+              <div class="mb-4">
+                <label for="name" class="form-label">Nome</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  class="form-control custom-input"
+                  placeholder="Mario Rossi"
+                  required
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-control custom-input"
+                  placeholder="nome@azienda.it"
+                  required
+                />
+              </div>
+
+              <div class="mb-4">
+                <label for="message" class="form-label">Messaggio</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="form-control custom-input"
+                  placeholder="Cosa vorresti realizzare? Bastano poche righe."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary-custom w-100 justify-content-center">
+                Invia messaggio
+              </button>
+            </form>
+
+            <!-- Messaggio di successo (nascosto di default) -->
+            <div class="contact-success d-none" id="contactSuccess">
+              <div class="contact-success-icon">✓</div>
+              <h3 class="contact-success-title">Messaggio inviato!</h3>
+              <p class="contact-success-text">Grazie per avermi scritto. Ti risponderò a breve.</p>
+          </div>
+
           </div>
         </div>
       </div>

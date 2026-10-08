@@ -22,13 +22,10 @@ export function initNavbarScroll() {
   if (!nav) return
 
   const onScroll = () => {
-    if (window.scrollY > 40) {
-      nav.style.background = 'rgba(15, 23, 42, 0.97)'
-    } else {
-      nav.style.background = 'rgba(15, 23, 42, 0.85)'
-    }
+    nav.classList.toggle('scrolled', window.scrollY > 40)
   }
 
+  onScroll()
   window.addEventListener('scroll', onScroll, { passive: true })
 }
 
