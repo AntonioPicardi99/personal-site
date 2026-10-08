@@ -12,34 +12,34 @@ Form Netlify: `public/_forms.html` (copia statica per il rilevamento del form, i
 - HTML5 semantico
 - CSS custom + Bootstrap 5 (via npm, importato in `src/main.js`)
 - Vanilla JS (ES modules)
-- Font: Google Fonts — `DM Serif Display` (solo peso 400) + `Inter` (400/500/600)
+- Font: Google Fonts — `Plus Jakarta Sans` (800, solo titoli) + `Inter` (400/500/600)
 - Form: Netlify Forms (attributo `netlify` su `<form>`)
 
 ## Struttura sezioni (in ordine nel DOM)
 1. `#mainNav` — navbar fixed-top (voci: Servizi, Progetti, Chi sono, Tecnologie, Contatti; il nome porta a `#hero`)
-2. `#hero` — titolo con cursore lampeggiante, sottotitolo, CTA; mockup gestionale (tabella ordini con corriere e stato + magazzino, dati fittizi, `aria-hidden`) solo su desktop (`d-none d-lg-block`). Altezza data dal padding, senza min-height: la sezione successiva si vede già nella prima schermata
-3. `#projects` — "Cosa sviluppo": 3 servizi (siti web, CRM/gestionali, e-commerce); su desktop elenco a righe in un unico pannello, su mobile card impilate
-4. `#work` — "Alcuni progetti": 3 casi studio anonimi (clienti e magazzino, e-commerce su misura e PrestaShop con moduli custom, gestione personale) in schede Prima / Cosa ho costruito / Risultato. Progetti sviluppati da dipendente: niente nomi di clienti, link o numeri inventati, formula "a cui ho lavorato"
+2. `#hero` — titolo con cursore lampeggiante, sottotitolo, CTA; mockup gestionale (tabella ordini con corriere e stato + magazzino, dati fittizi, `aria-hidden`) su tutti i breakpoint: sotto 576px senza colonna Corriere e senza blocco `.mockup-stock`. Altezza data dal padding, senza min-height: la sezione successiva si vede già nella prima schermata
+3. `#projects` — "Cosa sviluppo": 3 servizi (siti web, CRM/gestionali, e-commerce); su desktop elenco a righe in un unico pannello, su mobile card impilate con icona e titolo sulla stessa riga
+4. `#work` — "Alcuni progetti": 3 casi studio anonimi (clienti e magazzino, e-commerce su misura e PrestaShop con moduli custom, gestione personale) in schede Prima / Cosa ho costruito / Risultato, rese come sequenza con pallini grigio → blu → verde. Su mobile la `.row.case-list` diventa un carosello orizzontale con scroll-snap (scheda successiva visibile al bordo). Progetti sviluppati da dipendente: niente nomi di clienti, link o numeri inventati, formula "a cui ho lavorato"
 5. `#about` — "Chi sono": titolo a sinistra, testo + link social a destra (nessun riferimento al datore di lavoro)
 6. `#skills` — "Tecnologie": gruppi Backend / Frontend / Strumenti; desktop righe con etichetta a sinistra, mobile capability card
 7. `#contact` — "Parliamo": intro + email a sinistra, form Netlify a destra (su mobile email prima del form)
 8. `footer.site-footer` — copyright + link social
 
-Sfondi alternati: hero bianco, `#projects` `.section-alt`, `#work` bianco, `#about` `.section-alt`, `#skills` bianco, `#contact` `.section-alt`.
+Sfondi alternati: hero bianco, `#projects` `.section-alt`, `#work` bianco, `#about` `.section-alt`, `#skills` bianco, `#contact` `.section-contact` (azzurro chiaro `--accent-tint`, form bianco).
 
 ## Classi CSS chiave da non rinominare
 - `.navbar`, `#mainNav`, `#mainNav.scrolled` — navbar (`.scrolled` aggiunta da `animations.js` dopo 40px di scroll)
 - `.hero-section`, `.hero-title`, `.hero-subtitle` — hero (il cursore è `.hero-title::after`)
-- `.hero-mockup` e figli (`.mockup-table`, `.mockup-badge.green/.blue/.amber`, `.mockup-row`) — mockup gestionale desktop
+- `.hero-mockup` e figli (`.mockup-table`, `.mockup-stock`, `.mockup-badge.green/.blue/.amber`, `.mockup-row`) — mockup gestionale
 - `.project-list` (sulla `.row`), `.project-card`, `.project-title`, `.project-desc`, `.project-tags`, `.project-tag` — servizi
-- `.case-card`, `.case-title`, `.case-fields`, `.case-result` — casi studio (i tag riusano `.project-tag`)
+- `.case-list` (sulla `.row`), `.case-card`, `.case-title`, `.case-fields`, `.case-result` — casi studio (i tag riusano `.project-tag`)
 - `.about-card`, `.about-text`, `.about-meta`, `.about-social-link` — chi sono
 - `.stack-group`, `.tech-card`, `.tech-card-name`, `.tech-card-note`, `.stack-category-label` — tecnologie desktop
 - `.capability-card`, `.capability-pill` — tecnologie mobile
-- `.contact-card`, `.contact-form`, `.custom-input`, `.contact-alt`, `.contact-success` — contatti
+- `.section-contact`, `.contact-card`, `.contact-form`, `.custom-input`, `.contact-alt`, `.contact-success` — contatti
 - `.site-footer`, `.footer-copy`, `.footer-link` — footer
 - `.section-header`, `.section-header-split`, `.section-title`, `.section-subtitle`, `.section-padding`, `.section-alt` — layout sezioni
-- `.fade-in` — classe per animazioni scroll (non rimuovere, gestita da `animations.js`; 20 elementi)
+- `.fade-in` — classe per animazioni scroll (non rimuovere, gestita da `animations.js`; 21 elementi. In `.project-list` anima l'intero pannello: le righe interne hanno l'animazione neutralizzata, altrimenti il pannello appare spezzato durante lo scroll)
 - `.btn-primary-custom` — bottone CTA principale
 
 ## Regole invarianti (NON modificare mai)
@@ -55,16 +55,17 @@ Sfondi alternati: hero bianco, `#projects` `.section-alt`, `#work` bianco, `#abo
 Direzione: **clean & minimal**, chiaro. Il sito deve sembrare fatto da chi costruisce gestionali (tabelle, record, moduli), non un template da sviluppatore.
 
 Token in `:root` di `style.css`:
-- Colori: `--paper #ffffff`, `--surface #f6f7f9` (sezioni alternate), `--ink #111827`, `--ink-soft #4b5563` (testo secondario), `--ink-muted #6b7280` (solo su bianco/surface), `--rule #e5e7eb` (bordi), `--rule-strong #8c93a0` (bordi dei campi, contrasto 3:1), `--accent #2563eb`, `--accent-hover #1d4ed8`, `--accent-tint #eff4ff`
+- Colori: `--paper #ffffff`, `--surface #f6f7f9` (sezioni alternate), `--ink #111827`, `--ink-soft #4b5563` (testo secondario), `--ink-muted #6b7280` (solo su bianco/surface), `--rule #e5e7eb` (bordi), `--rule-strong #8c93a0` (bordi dei campi, contrasto 3:1), `--accent #2563eb`, `--accent-hover #1d4ed8`, `--accent-tint #eff4ff`, `--accent-line #dbe5fd` (tag e pillole: fondo azzurro, testo `--accent-hover`)
 - Stati (solo nel mockup e nel messaggio di successo): `--ok` / `--ok-tint`, `--warn` / `--warn-tint`
 - Raggi: `--radius-sm 6px`, `--radius-md 8px`, `--radius-lg 12px`
 - Spaziature: `--section-py` (128 / 96 / 72px), `--header-gap`
 
 Principi:
-- `DM Serif Display` per h1, h2 e nome in navbar (peso 400, gerarchia con la dimensione, mai bold); `Inter` per tutto il resto, h3 a 600
+- `Plus Jakarta Sans` 800 per h1, h2 e nome in navbar (letter-spacing negativo); `Inter` per tutto il resto, h3 a 600. Il serif DM Serif Display è stato scartato dall'utente (poco "carico")
 - Scala tipografica 16 / 20 / 25 / 32 / 44 / 64; testo lungo max ~62ch
 - Contenuti allineati a sinistra su tutti i breakpoint
-- Un solo elemento in risalto: il mockup della hero (unica ombra del sito). Il resto con bordi 1px, niente ombre
+- Un solo elemento in risalto: il mockup della hero (unica ombra del sito), visibile anche su mobile. Il resto con bordi 1px, niente ombre
+- Il colore deve arrivare anche su mobile (feedback utente: il bianco/grigio puro sembrava "un giornale in bianco e nero"): tag azzurri, stati colorati nel mockup e nei casi studio, contatti su azzurro chiaro. Niente fondi blu saturi: il blu notte sui contatti è stato giudicato "troppo aggressivo"
 - Nessun gradiente, glassmorphism, dark mode, etichette in maiuscolo sopra i titoli, singola parola evidenziata nel titolo
 - Animazioni: solo fade-in allo scroll + cursore lampeggiante; entrambe disattivate con `prefers-reduced-motion`
 - Nessun effetto hover "sollevamento" su elementi non cliccabili
@@ -79,8 +80,8 @@ Principi:
 - Non rimuovere le classi Bootstrap strutturali (`.container`, `.row`, `.col-*`, `.d-none`, `.d-lg-block`, ecc.)
 - Le utility Bootstrap (`mt-*`, `mb-*`, `text-center`) usano `!important`: per controllare margini o allineamento da CSS, toglierle dall'HTML
 - Gutter `g-5` / `gx-5` su mobile sfora il container (scroll orizzontale): usare `gx-4` sotto `lg`
-- Nessuno spazio bianco prima di `</h1>` nella hero, altrimenti il cursore si stacca dal punto finale
+- Nessuno spazio bianco prima di `</h1>` nella hero, altrimenti il cursore si stacca dal punto finale. Il punto è in `<span class="hero-dot">` con margine negativo perché in Plus Jakarta Sans ha molto spazio a sinistra
 
 ## SEO e anteprima social
 - Dominio: `https://antonio-picardi.netlify.app/` (usato in `og:url`, `og:image` e `link rel="canonical"`)
-- Immagine anteprima: `public/og-image.png` (1200×630, stesso stile del sito). Se cambia il titolo della hero va rigenerata
+- Immagine anteprima: `public/og-image.png` (1200×630, stesso stile e font del sito). Se cambiano titolo della hero o font va rigenerata
