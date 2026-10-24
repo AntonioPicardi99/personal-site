@@ -46,6 +46,7 @@ Sfondi alternati: hero bianco, `#projects` `.section-alt`, `#work` bianco, `#abo
 
 ## Regole invarianti (NON modificare mai)
 - I testi sono stati rivisti (ottobre 2026): non cambiarli senza una richiesta esplicita
+- Tono di voce: concreto (cose fatte, non promesse), semplice (comprensibile a chi non è tecnico, tranne in Tecnologie), da portfolio (racconta, non vende). Ti presenti sempre come "sviluppatore full stack" (title, meta, og-image, hero). "Su misura" e "semplifica il lavoro delle persone" stanno nella hero e nei meta: non ripeterli in "Cosa sviluppo" e "Chi sono" (nel caso studio e-commerce "su misura" resta, descrive il progetto). Niente parole da listino ("professionali", "farsi trovare su Google")
 - Tono da portfolio, non da freelance (Antonio è dipendente, senza partita IVA): niente "la tua azienda", "se hai un progetto", "clienti" riferiti a sé, offerte di servizi o "opportunità di lavoro"
 - Il form deve mantenere: `name="contact"`, `method="POST"`, `netlify`, `data-netlify="true"`, `netlify-honeypot="bot-field"`, campo hidden `form-name`
 - L'ID `#contactForm`, `#contactSubmit` e `#contactSuccess` devono restare invariati (usati in `main.js`: durante l'invio il pulsante è disattivato con "Invio in corso…", dopo il successo il focus va su `.contact-success-title`)
