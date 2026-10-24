@@ -17,12 +17,13 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="canonical" href="https://antonio-picardi.netlify.app/" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="theme-color" content="#ffffff" />
   <noscript>
     <style>.fade-in { opacity: 1; transform: none; }</style>
   </noscript>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Font ospitati nel sito (@font-face in style.css): precaricati quelli del titolo e del testo -->
+  <link rel="preload" href="/src/fonts/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/src/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
 </head>
 <body>
 
@@ -38,7 +39,7 @@
         data-bs-target="#navbarNav"
         aria-controls="navbarNav"
         aria-expanded="false"
-        aria-label="Toggle navigation"
+        aria-label="Menu"
       >
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -55,6 +56,8 @@
     </div>
   </nav>
 
+  <main>
+
   <!-- ========== HERO ========== -->
   <section id="hero" class="hero-section d-flex align-items-center">
     <div class="container">
@@ -64,9 +67,9 @@
         <div class="col-lg-6 fade-in hero-text-col">
           <h1 class="hero-title mb-4">
             Siti web e software su misura<span class="hero-dot">.</span></h1>
-          <p class="hero-subtitle mb-5">
-            Sono Antonio, sviluppatore full stack. Lavoro soprattutto su gestionali ed e-commerce:
-            ordini, magazzino, clienti, i dati con cui un'azienda lavora ogni giorno.
+          <p class="hero-subtitle mb-4 mb-lg-5">
+            Sono Antonio, sviluppatore full stack. Creo software che semplifica il lavoro
+            delle persone: siti, gestionali, <span class="text-nowrap">e-commerce</span> e strumenti progettati da zero.
           </p>
           <a href="#contact" class="btn btn-primary-custom btn-lg">
             Contattami
@@ -76,48 +79,66 @@
           </a>
         </div>
 
-        <!-- Mockup gestionale -->
+        <!-- Mockup gestionale prenotazioni -->
         <div class="col-lg-6 fade-in">
-          <div class="hero-mockup" aria-hidden="true">
-            <div class="mockup-bar">
+          <p class="mockup-caption" id="mockupCaption">
+            <span class="mockup-caption-idle">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3l14 7.5-6.2 1.7L10 18.5 5 3z"/></svg>
+              Prova: conferma la prenotazione di Laura Conti.
+            </span>
+            <span class="mockup-caption-done">Un clic, tre operazioni fatte dal software.</span>
+          </p>
+          <div class="hero-mockup" id="heroMockup" role="group" aria-label="Esempio di gestionale: conferma una prenotazione e guarda cosa succede in automatico">
+            <div class="mockup-bar" aria-hidden="true">
               <span class="mockup-dot"></span>
               <span class="mockup-dot"></span>
               <span class="mockup-dot"></span>
-              <span class="mockup-filename">Gestionale ordini</span>
+              <span class="mockup-filename">Agenda</span>
             </div>
             <div class="mockup-body">
 
-              <div class="mockup-section-head">
-                <span class="mockup-section-label">Ordini</span>
-                <span class="mockup-section-meta">38 aperti</span>
-              </div>
+              <div class="mockup-section-label">Prenotazioni di domani</div>
               <table class="mockup-table">
                 <thead>
-                  <tr><th>N.</th><th>Cliente</th><th>Corriere</th><th>Stato</th></tr>
+                  <tr><th>Cliente</th><th>Ora</th><th>Stato</th></tr>
                 </thead>
                 <tbody>
-                  <tr><td>1042</td><td>Ferramenta Rossi</td><td>BRT</td><td><span class="mockup-badge green">Spedito</span></td></tr>
-                  <tr><td>1041</td><td>Bianchi Srl</td><td>GLS</td><td><span class="mockup-badge blue">In preparazione</span></td></tr>
-                  <tr><td>1040</td><td>Edilverde</td><td>SDA</td><td><span class="mockup-badge amber">Da evadere</span></td></tr>
-                  <tr><td>1039</td><td>Studio Conti</td><td>BRT</td><td><span class="mockup-badge green">Spedito</span></td></tr>
+                  <tr><td>Giulia Ferri</td><td>09:30</td><td><span class="mockup-badge green">Confermata</span></td></tr>
+                  <tr><td>Marco Bianchi</td><td>11:00</td><td><span class="mockup-badge amber">Spostata</span></td></tr>
+                  <tr class="mockup-pending">
+                    <td>Laura Conti</td>
+                    <td>15:00</td>
+                    <td>
+                      <button type="button" class="mockup-action" id="mockupConfirm" aria-describedby="mockupCaption">Conferma</button>
+                      <span class="mockup-badge green mockup-confirmed">Confermata</span>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
 
-              <div class="mockup-stock">
+              <div class="mockup-auto">
                 <div class="mockup-divider"></div>
 
-                <div class="mockup-section-label">Magazzino</div>
-                <div class="mockup-row">
-                  <span class="mockup-row-label">Giacenze</span>
-                  <div class="mockup-bar-track"><div class="mockup-bar-fill green" style="width:70%"></div></div>
-                  <span class="mockup-badge green">Regolare</span>
+                <div class="mockup-section-head">
+                  <span class="mockup-section-label">Fatto in automatico</span>
+                  <span class="mockup-section-meta">Partono alla conferma</span>
+                  <button type="button" class="mockup-reset" id="mockupReset">Riprova</button>
                 </div>
                 <div class="mockup-row">
-                  <span class="mockup-row-label">In esaurimento</span>
-                  <div class="mockup-bar-track"><div class="mockup-bar-fill amber" style="width:20%"></div></div>
-                  <span class="mockup-badge amber">3 articoli</span>
+                  <span class="mockup-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></span>
+                  <span class="mockup-row-label">Calendario aggiornato</span>
+                </div>
+                <div class="mockup-row">
+                  <span class="mockup-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></span>
+                  <span class="mockup-row-label">Email di conferma inviata</span>
+                </div>
+                <div class="mockup-row">
+                  <span class="mockup-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg></span>
+                  <span class="mockup-row-label">SMS di promemoria programmato</span>
                 </div>
               </div>
+
+              <p class="visually-hidden" aria-live="polite" id="mockupStatus"></p>
 
             </div>
           </div>
@@ -132,7 +153,7 @@
     <div class="container">
       <div class="section-header section-header-split fade-in">
         <h2 class="section-title">Cosa sviluppo</h2>
-        <p class="section-subtitle mt-3">I progetti su cui lavoro più spesso.</p>
+        <p class="section-subtitle mt-3">I tipi di software su cui lavoro.</p>
       </div>
 
       <div class="row g-0 project-list fade-in">
@@ -169,16 +190,14 @@
             </div>
             <h3 class="project-title">CRM e gestionali su misura</h3>
             <p class="project-desc">
-              Gestionali costruiti attorno ai processi di un'azienda: dal magazzino ai preventivi,
-              dalle presenze del personale agli ordini collegati ai corrieri. Si parte da come
-              lavorano le persone che li useranno, senza template.
+              Gestionali costruiti attorno a come lavora un'azienda: magazzino, preventivi, personale,
+              ordini e spedizioni. Si parte dalle persone che li useranno, senza template.
             </p>
             <div class="project-tags">
               <span class="project-tag">Magazzino e giacenze</span>
               <span class="project-tag">Clienti e preventivi</span>
               <span class="project-tag">Gestione personale</span>
               <span class="project-tag">Ordini e spedizioni</span>
-              <span class="project-tag">Reportistica</span>
             </div>
           </div>
         </div>
@@ -205,6 +224,28 @@
           </div>
         </div>
 
+        <!-- Card 4: Automazioni -->
+        <div class="col-12 fade-in">
+          <div class="project-card h-100">
+            <div class="project-card-header">
+              <div class="project-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 3L4.5 13.5H11l-1 7.5 8.5-10.5H12L13 3z"/></svg>
+              </div>
+            </div>
+            <h3 class="project-title">Automazioni e strumenti</h3>
+            <p class="project-desc">
+              Strumenti che tolgono il lavoro ripetitivo, come l'invio automatico di SMS ai clienti
+              per avvisi e promemoria. Si parte da un'idea o da un problema concreto.
+            </p>
+            <div class="project-tags">
+              <span class="project-tag">SMS automatici</span>
+              <span class="project-tag">Automazioni</span>
+              <span class="project-tag">Integrazioni</span>
+              <span class="project-tag">Software da zero</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -217,7 +258,7 @@
         <p class="section-subtitle mt-3">Software a cui ho lavorato, da solo o in team, per aziende di settori diversi.</p>
       </div>
 
-      <div class="row g-4 case-list">
+      <div class="row g-4 case-list" id="caseList" role="region" aria-label="Progetti, scorri in orizzontale" tabindex="0">
         <div class="col-lg-4 fade-in">
           <article class="case-card h-100">
             <h3 class="case-title">Gestionale clienti e magazzino</h3>
@@ -276,6 +317,13 @@
         </div>
 
       </div>
+
+      <!-- Indicatore del carosello (solo mobile, gestito da carousel.js) -->
+      <div class="case-dots d-lg-none" id="caseDots" role="group" aria-label="Scegli il progetto">
+        <button type="button" class="case-dot" aria-label="Progetto 1 di 3" aria-current="true"></button>
+        <button type="button" class="case-dot" aria-label="Progetto 2 di 3"></button>
+        <button type="button" class="case-dot" aria-label="Progetto 3 di 3"></button>
+      </div>
     </div>
   </section>
 
@@ -300,7 +348,7 @@
             </p>
             <p class="about-text mb-0">
               Per me un buon software si vede nel tempo: codice che un collega sa leggere, funzionalità
-              che si aggiungono senza rompere quelle esistenti, interfacce che si usano senza manuale.
+              che si aggiungono senza troppi problemi, interfacce che si usano senza manuale.
             </p>
 
             <div class="about-meta mt-4 pt-4">
@@ -373,37 +421,37 @@
       <div class="stack-group fade-in">
         <p class="stack-category-label">Backend</p>
         <div class="row g-3">
-          <div class="col-6 col-lg-3">
+          <div class="col-6 col-lg-4">
             <div class="tech-card">
               <div class="tech-card-name">PHP</div>
               <div class="tech-card-note">Il mio linguaggio principale da anni, a oggetti e procedurale.</div>
             </div>
           </div>
-          <div class="col-6 col-lg-3">
+          <div class="col-6 col-lg-4">
             <div class="tech-card">
               <div class="tech-card-name">Symfony</div>
               <div class="tech-card-note">Il framework che preferisco per applicazioni strutturate e scalabili.</div>
             </div>
           </div>
-          <div class="col-6 col-lg-3">
+          <div class="col-6 col-lg-4">
             <div class="tech-card">
               <div class="tech-card-name">Doctrine</div>
               <div class="tech-card-note">ORM per la gestione del database in progetti Symfony.</div>
             </div>
           </div>
-          <div class="col-6 col-lg-3">
+          <div class="col-6 col-lg-4">
             <div class="tech-card">
               <div class="tech-card-name">Twig</div>
               <div class="tech-card-note">Template Symfony puliti e riutilizzabili.</div>
             </div>
           </div>
-          <div class="col-6 col-lg-3">
+          <div class="col-6 col-lg-4">
             <div class="tech-card">
               <div class="tech-card-name">MySQL</div>
               <div class="tech-card-note">Progettazione e gestione di database relazionali, anche complessi.</div>
             </div>
           </div>
-          <div class="col-6 col-lg-3">
+          <div class="col-6 col-lg-4">
             <div class="tech-card">
               <div class="tech-card-name">REST API</div>
               <div class="tech-card-note">Progettazione di API e integrazioni con servizi esterni.</div>
@@ -521,7 +569,7 @@
                   id="name"
                   name="name"
                   class="form-control custom-input"
-                  placeholder="Mario Rossi"
+                  autocomplete="name"
                   required
                 />
               </div>
@@ -534,6 +582,7 @@
                   name="email"
                   class="form-control custom-input"
                   placeholder="nome@esempio.it"
+                  autocomplete="email"
                   required
                 />
               </div>
@@ -550,17 +599,19 @@
                 ></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary-custom w-100 justify-content-center">
+              <button type="submit" class="btn btn-primary-custom w-100 justify-content-center" id="contactSubmit">
                 Invia messaggio
               </button>
             </form>
 
             <!-- Messaggio di successo (nascosto di default) -->
             <div class="contact-success d-none" id="contactSuccess">
-              <div class="contact-success-icon">✓</div>
-              <h3 class="contact-success-title">Messaggio inviato!</h3>
+              <div class="contact-success-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg>
+              </div>
+              <h3 class="contact-success-title" tabindex="-1">Messaggio inviato!</h3>
               <p class="contact-success-text">Grazie per avermi scritto. Ti risponderò a breve.</p>
-          </div>
+            </div>
 
           </div>
         </div>
@@ -568,10 +619,12 @@
     </div>
   </section>
 
+  </main>
+
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
     <div class="container">
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 gap-md-3">
         <p class="footer-copy mb-0">© <span id="footer-year"></span> Antonio Picardi</p>
         <div class="d-flex gap-4">
           <a href="https://www.linkedin.com/in/antonio-picardi-390b251a2" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn</a>
