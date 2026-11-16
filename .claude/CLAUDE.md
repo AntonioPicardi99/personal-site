@@ -87,5 +87,5 @@ Principi:
 - Nessuno spazio bianco prima di `</h1>` nella hero, altrimenti il cursore si stacca dal punto finale. Il punto è in `<span class="hero-dot">` con margine negativo perché in Plus Jakarta Sans ha molto spazio a sinistra
 
 ## SEO e anteprima social
-- Dominio: `https://antonio-picardi.netlify.app/` (usato in `og:url`, `og:image` e `link rel="canonical"`)
+- Dominio: `https://antoniopicardi.it/` (registrato su Register.it, collegato a Netlify; usato in `og:url`, `og:image`, `link rel="canonical"` e scritto in basso a destra in `og-image.png`). Il vecchio indirizzo `antonio-picardi.netlify.app` resta attivo
 - Immagine anteprima: `public/og-image.png` (1200×630, stesso stile e font del sito). Se cambiano titolo della hero o font va rigenerata
